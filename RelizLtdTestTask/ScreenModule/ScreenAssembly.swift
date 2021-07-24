@@ -15,11 +15,17 @@ protocol ScreenAssemblyProtocol {
 
 final class ScreenAssembly: ScreenAssemblyProtocol {
     
+    // MARK: - Properties
+    
     var screenType: ScreenType
+    
+    // MARK: Initializers
     
     init(screenType: ScreenType) {
         self.screenType = screenType
     }
+    
+    // MARK: - Public
     
     func configureFullScreenViewController() -> ScreenViewController {
         

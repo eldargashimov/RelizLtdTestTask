@@ -26,9 +26,13 @@ final class ScreenPresenter: ScreenPresenterInput, ScreenInteractorOutput {
     weak var view: ScreenPresenterOutput?
     private let interactor: ScreenInteractorInput
     
+    // MARK: - Initializers
+    
     init(interactor: ScreenInteractorInput) {
         self.interactor = interactor
     }
+    
+    // MARK: - Public
     
     func choosingVC(screenType: ScreenType) -> ScreenVCModel {
         

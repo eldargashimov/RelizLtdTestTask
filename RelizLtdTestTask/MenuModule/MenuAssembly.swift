@@ -19,11 +19,9 @@ final class MenuAssembly : MenuAssemblyProtocol {
         let interactor = MenuInteractor()
         let presenter = MenuPresenter(interactor: interactor)
         let view = MenuViewController()
-        
         view.presenter = presenter
         presenter.view = view
         interactor.presenter = presenter
-        
         return view
     }
 }

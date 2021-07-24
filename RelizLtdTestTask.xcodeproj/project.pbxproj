@@ -79,10 +79,10 @@
 				045A882126AC253200D569C1 /* MenuModule */,
 				045A882926AC2DE400D569C1 /* ScreenModule */,
 				041F8C1426AAC623005B3699 /* AppDelegate.swift */,
+				045A883E26AC956400D569C1 /* ButtonAnimateExtension.swift */,
 				041F8C1D26AAC626005B3699 /* Assets.xcassets */,
 				041F8C1F26AAC626005B3699 /* LaunchScreen.storyboard */,
 				041F8C2226AAC626005B3699 /* Info.plist */,
-				045A883E26AC956400D569C1 /* ButtonAnimateExtension.swift */,
 			);
 			path = RelizLtdTestTask;
 			sourceTree = "<group>";

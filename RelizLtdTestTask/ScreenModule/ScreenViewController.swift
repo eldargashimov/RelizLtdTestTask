@@ -9,18 +9,10 @@ import UIKit
 
 class ScreenViewController: UIViewController {
     
+    // MARK: - Properties
+    
     var router: ScreenRouter?
-    
     var presenter: ScreenPresenterInput?
-    
-    // MARK: - Subviews
-    
-    var contentView = UIView()
-    var screenLabel = UILabel()
-    var backButton = UIButton()
-    var firstButton = UIButton()
-    var secondButton = UIButton()
-    var thirdButton = UIButton()
     
     var leftAndRightIdent: CGFloat
     var topAndBottonIdent: CGFloat
@@ -32,6 +24,15 @@ class ScreenViewController: UIViewController {
             return true
         }
     }
+    
+    // MARK: - Subviews
+    
+    var contentView = UIView()
+    var screenLabel = UILabel()
+    var backButton = UIButton()
+    var firstButton = UIButton()
+    var secondButton = UIButton()
+    var thirdButton = UIButton()
     
     // MARK: - Propertys
     

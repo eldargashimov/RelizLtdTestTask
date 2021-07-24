@@ -18,15 +18,20 @@ protocol ScreenRouterProtocol {
 
 final class ScreenRouter: ScreenRouterProtocol {
     
-    var screenType: ScreenType
+    // MARK: - Properties
     
+    var screenType: ScreenType
     weak var screenViewController: ScreenViewController?
     lazy var screenAssembly = ScreenAssembly(screenType: screenType)
+    
+    // MARK: - Initializers
     
     init(screenViewController: ScreenViewController?, screenType: ScreenType) {
         self.screenViewController = screenViewController
         self.screenType = screenType
     }
+    
+    // MARK: - Public
     
     func presentFullScreenViewController() {
         

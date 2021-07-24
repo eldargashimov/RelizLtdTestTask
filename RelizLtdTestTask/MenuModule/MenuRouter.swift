@@ -15,12 +15,19 @@ protocol MenuRouterProtocol {
 
 final class MenuRouter: MenuRouterProtocol {
     
+    // MARK: - Properties
+    
     weak var menuViewController: MenuViewController?
     lazy var screenAssembly = ScreenAssembly(screenType: .first)
     
+    // MARK: - Initializers
+    
     init(menuViewController: MenuViewController?) {
+        
         self.menuViewController = menuViewController
     }
+    
+    // MARK: - Public
     
     func presentScreenViewController() {
         

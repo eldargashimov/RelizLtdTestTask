@@ -17,11 +17,15 @@ protocol MenuPresenterOutput: AnyObject {
 
 final class MenuPresenter: MenuPresenterInput, MenuInteractorOutput {
     
-    weak var view: MenuPresenterOutput?
+    // MARK: - Properties
     
+    weak var view: MenuPresenterOutput?
     private let interactor: MenuInteractorInput
     
+    // MARK: Initializers
+    
     init(interactor: MenuInteractorInput) {
+        
         self.interactor = interactor
     }
 }

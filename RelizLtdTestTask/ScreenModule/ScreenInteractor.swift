@@ -21,15 +21,20 @@ protocol ScreenInteractorOutput: AnyObject {
 }
 
 final class ScreenInteractor: ScreenInteractorInput {
+    
+    // MARK: - Properties
 
     var screenType: ScreenType
+    weak var presenter: ScreenInteractorOutput?
+    
+    // MARK: - Initializers
     
     init(screenType: ScreenType) {
         
         self.screenType = screenType
     }
     
-    weak var presenter: ScreenInteractorOutput?
+    // MARK: - Public
     
     func getScreenVC() -> ScreenVCModel {
         
@@ -78,7 +83,6 @@ final class ScreenInteractor: ScreenInteractorInput {
         case .fourth:
             secondScreenType = .first
         }
-        
         return secondScreenType
     }
     
@@ -95,7 +99,6 @@ final class ScreenInteractor: ScreenInteractorInput {
         case .fourth:
             secondScreenType = .second
         }
-        
         return secondScreenType
     }
     
@@ -112,7 +115,6 @@ final class ScreenInteractor: ScreenInteractorInput {
         case .fourth:
             secondScreenType = .third
         }
-        
         return secondScreenType
     }
 }

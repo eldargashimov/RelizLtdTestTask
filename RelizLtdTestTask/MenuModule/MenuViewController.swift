@@ -7,14 +7,20 @@
 
 import UIKit
 
-class MenuViewController: UIViewController {
+final class MenuViewController: UIViewController {
+    
+    // MARK: - Properties
     
     var router: MenuRouter?
     var presenter: MenuPresenterInput?
     
+    // MARK: - Subviews
+    
     var menuLabel = UILabel()
     var fullScreenButton = UIButton()
     var popUpButton = UIButton()
+    
+    // MARK: - ViewDidLoad
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +30,8 @@ class MenuViewController: UIViewController {
         setupPopUpButton()
         setupFullScreenButton()
     }
+    
+    // MARK: - Private
     
     private func setupMenuLabel() {
         
@@ -76,6 +84,8 @@ class MenuViewController: UIViewController {
         fullScreenButton.addTarget(self, action: #selector(touchDownFullScreenButton), for: .touchDown)
         fullScreenButton.addTarget(self, action: #selector(touchUpInsideFullScreenButton), for: .touchUpInside)
     }
+    
+    // MARK: - @objc
     
     @objc private func touchUpInsideFullScreenButton() {
         
