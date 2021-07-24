@@ -22,9 +22,9 @@ final class MenuRouter: MenuRouterProtocol {
     
     // MARK: - Initializers
     
-    init(menuViewController: MenuViewController?) {
+    init(menuViewController: UIViewController?) {
         
-        self.menuViewController = menuViewController
+        self.menuViewController = menuViewController as? MenuViewController
     }
     
     // MARK: - Public

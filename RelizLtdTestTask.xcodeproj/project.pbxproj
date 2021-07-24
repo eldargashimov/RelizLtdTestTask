@@ -14,7 +14,6 @@
 		041F8C2B26AAD062005B3699 /* ScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F8C2A26AAD061005B3699 /* ScreenViewController.swift */; };
 		041F8C2E26AAEA7A005B3699 /* ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F8C2D26AAEA7A005B3699 /* ScreenType.swift */; };
 		041F8C3826AC1FA9005B3699 /* MenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F8C3726AC1FA9005B3699 /* MenuPresenter.swift */; };
-		041F8C3B26AC1FB8005B3699 /* MenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F8C3A26AC1FB8005B3699 /* MenuInteractor.swift */; };
 		045A882326AC255A00D569C1 /* MenuAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045A882226AC255A00D569C1 /* MenuAssembly.swift */; };
 		045A882726AC2C7000D569C1 /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045A882626AC2C7000D569C1 /* MenuRouter.swift */; };
 		045A882B26AC2E0800D569C1 /* ScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045A882A26AC2E0800D569C1 /* ScreenPresenter.swift */; };
@@ -35,7 +34,6 @@
 		041F8C2A26AAD061005B3699 /* ScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenViewController.swift; sourceTree = "<group>"; };
 		041F8C2D26AAEA7A005B3699 /* ScreenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenType.swift; sourceTree = "<group>"; };
 		041F8C3726AC1FA9005B3699 /* MenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPresenter.swift; sourceTree = "<group>"; };
-		041F8C3A26AC1FB8005B3699 /* MenuInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInteractor.swift; sourceTree = "<group>"; };
 		045A882226AC255A00D569C1 /* MenuAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAssembly.swift; sourceTree = "<group>"; };
 		045A882626AC2C7000D569C1 /* MenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouter.swift; sourceTree = "<group>"; };
 		045A882A26AC2E0800D569C1 /* ScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPresenter.swift; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				041F8C1826AAC623005B3699 /* MenuViewController.swift */,
-				041F8C3A26AC1FB8005B3699 /* MenuInteractor.swift */,
 				041F8C3726AC1FA9005B3699 /* MenuPresenter.swift */,
 				045A882626AC2C7000D569C1 /* MenuRouter.swift */,
 				045A882226AC255A00D569C1 /* MenuAssembly.swift */,
@@ -183,7 +180,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				045A882B26AC2E0800D569C1 /* ScreenPresenter.swift in Sources */,
-				041F8C3B26AC1FB8005B3699 /* MenuInteractor.swift in Sources */,
 				041F8C2B26AAD062005B3699 /* ScreenViewController.swift in Sources */,
 				045A882726AC2C7000D569C1 /* MenuRouter.swift in Sources */,
 				045A882326AC255A00D569C1 /* MenuAssembly.swift in Sources */,

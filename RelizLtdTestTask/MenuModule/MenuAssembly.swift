@@ -16,12 +16,12 @@ final class MenuAssembly : MenuAssemblyProtocol {
     
     func configureMenuViewController() -> MenuViewController {
         
-        let interactor = MenuInteractor()
-        let presenter = MenuPresenter(interactor: interactor)
         let view = MenuViewController()
+        let router = MenuRouter(menuViewController: view)
+        let presenter = MenuPresenter()
         view.presenter = presenter
         presenter.view = view
-        interactor.presenter = presenter
+        presenter.router = router
         return view
     }
 }

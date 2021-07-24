@@ -32,9 +32,11 @@ final class ScreenAssembly: ScreenAssemblyProtocol {
         let interactor = ScreenInteractor(screenType: screenType)
         let presenter = ScreenPresenter(interactor: interactor)
         let view = ScreenViewController(screenType: screenType, nibName: nil, bundle: nil, leftAndRightIdent: 0.0, topAndBottonIdent: 0.0)
+        let router = ScreenRouter(screenViewController: view, screenType: screenType, itIsPop: view.itIsPopup)
         
         view.presenter = presenter
         presenter.view = view
+        presenter.router = router
         interactor.presenter = presenter
         
         return view
@@ -45,9 +47,11 @@ final class ScreenAssembly: ScreenAssemblyProtocol {
         let interactor = ScreenInteractor(screenType: screenType)
         let presenter = ScreenPresenter(interactor: interactor)
         let view = ScreenViewController(screenType: screenType, nibName: nil, bundle: nil, leftAndRightIdent: 50.0, topAndBottonIdent: 75.0)
+        let router = ScreenRouter(screenViewController: view, screenType: screenType, itIsPop: view.itIsPopup)
         
         view.presenter = presenter
         presenter.view = view
+        presenter.router = router
         interactor.presenter = presenter
         
         return view

@@ -23,12 +23,14 @@ final class ScreenRouter: ScreenRouterProtocol {
     var screenType: ScreenType
     weak var screenViewController: ScreenViewController?
     lazy var screenAssembly = ScreenAssembly(screenType: screenType)
+    var itIsPopup: Bool
     
     // MARK: - Initializers
     
-    init(screenViewController: ScreenViewController?, screenType: ScreenType) {
+    init(screenViewController: ScreenViewController?, screenType: ScreenType, itIsPop: Bool) {
         self.screenViewController = screenViewController
         self.screenType = screenType
+        self.itIsPopup = itIsPop
     }
     
     // MARK: - Public

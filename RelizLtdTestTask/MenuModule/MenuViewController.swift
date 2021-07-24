@@ -11,14 +11,13 @@ final class MenuViewController: UIViewController {
     
     // MARK: - Properties
     
-    var router: MenuRouter?
     var presenter: MenuPresenterInput?
     
     // MARK: - Subviews
     
-    var menuLabel = UILabel()
-    var fullScreenButton = UIButton()
-    var popUpButton = UIButton()
+    private var menuLabel = UILabel()
+    private var fullScreenButton = UIButton()
+    private var popUpButton = UIButton()
     
     // MARK: - ViewDidLoad
 
@@ -89,8 +88,7 @@ final class MenuViewController: UIViewController {
     
     @objc private func touchUpInsideFullScreenButton() {
         
-        router = MenuRouter(menuViewController: self)
-        router?.presentScreenViewController()
+        presenter?.didTappedFullScreenButton()
         fullScreenButton.touchUpInsideAnimate()
     }
     
@@ -101,8 +99,7 @@ final class MenuViewController: UIViewController {
     
     @objc private func touchUpInsidePopupButton() {
         
-        router = MenuRouter(menuViewController: self)
-        router?.presentPopupViewController()
+        presenter?.didTappedPopupButton()
         popUpButton.touchUpInsideAnimate()
     }
     

@@ -11,7 +11,7 @@ class ScreenViewController: UIViewController {
     
     // MARK: - Properties
     
-    var router: ScreenRouter?
+//    var router: ScreenRouter?
     var presenter: ScreenPresenterInput?
     
     var leftAndRightIdent: CGFloat
@@ -27,12 +27,12 @@ class ScreenViewController: UIViewController {
     
     // MARK: - Subviews
     
-    var contentView = UIView()
-    var screenLabel = UILabel()
-    var backButton = UIButton()
-    var firstButton = UIButton()
-    var secondButton = UIButton()
-    var thirdButton = UIButton()
+    private var contentView = UIView()
+    private var screenLabel = UILabel()
+    private var backButton = UIButton()
+    private var firstButton = UIButton()
+    private var secondButton = UIButton()
+    private var thirdButton = UIButton()
     
     // MARK: - Propertys
     
@@ -173,8 +173,7 @@ class ScreenViewController: UIViewController {
     
     private func presentVC(secondScreenType: ScreenType) {
         
-        router = ScreenRouter(screenViewController: self, screenType: secondScreenType)
-        itIsPopup ? router?.presentFullScreenViewController() : router?.presentPopupViewController()
+        presenter?.presentSecondVC(screenType: secondScreenType)
     }
     
     // MARK: - @objc
@@ -224,8 +223,7 @@ class ScreenViewController: UIViewController {
     @objc
     private func backToMenu() {
         
-        router = ScreenRouter(screenViewController: self, screenType: screenType)
-        router?.backToMenuViewController(viewController: self)
+        presenter?.didTappedGoToMenu()
     }
 }
 

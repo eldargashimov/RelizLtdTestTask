@@ -9,23 +9,30 @@ import Foundation
 
 protocol MenuPresenterInput: AnyObject {
     
+    func didTappedPopupButton()
+    func didTappedFullScreenButton()
 }
 
 protocol MenuPresenterOutput: AnyObject {
     
 }
 
-final class MenuPresenter: MenuPresenterInput, MenuInteractorOutput {
+final class MenuPresenter: MenuPresenterInput {
     
     // MARK: - Properties
     
     weak var view: MenuPresenterOutput?
-    private let interactor: MenuInteractorInput
+    var router: MenuRouter?
     
-    // MARK: Initializers
+    // MARK: - Public
     
-    init(interactor: MenuInteractorInput) {
+    func didTappedPopupButton() {
         
-        self.interactor = interactor
+        router?.presentPopupViewController()
+    }
+    
+    func didTappedFullScreenButton() {
+        
+        router?.presentScreenViewController()
     }
 }

@@ -38,34 +38,37 @@ final class ScreenInteractor: ScreenInteractorInput {
     
     func getScreenVC() -> ScreenVCModel {
         
-        var screenVCModel = ScreenVCModel()
+        var screenVCModel = ScreenVCModel(screenLabelText: "",
+                                          firstButtonTitle: "",
+                                          secondButtonTitle: "",
+                                          thirdButtonTitle: "",
+                                          colorOfBackground: .white)
         
         switch screenType {
         case .second:
-            
-            screenVCModel.screenLabelText = "Screen 2"
-            screenVCModel.firstButtonTitle = "Screen 1"
-            screenVCModel.secondButtonTitle = "Screen 3"
-            screenVCModel.thirdButtonTitle = "Screen 4"
-            screenVCModel.colorOfBackground = #colorLiteral(red: 1, green: 0.8075216413, blue: 1, alpha: 1)
+            screenVCModel = ScreenVCModel(screenLabelText: "Screen 2",
+                                          firstButtonTitle: "Screen 1",
+                                          secondButtonTitle: "Screen 3",
+                                          thirdButtonTitle: "Screen 4",
+                                          colorOfBackground: #colorLiteral(red: 1, green: 0.8075216413, blue: 1, alpha: 1))
         case .third:
-            screenVCModel.screenLabelText = "Screen 3"
-            screenVCModel.firstButtonTitle = "Screen 1"
-            screenVCModel.secondButtonTitle = "Screen 2"
-            screenVCModel.thirdButtonTitle = "Screen 4"
-            screenVCModel.colorOfBackground = #colorLiteral(red: 0.7818048596, green: 1, blue: 0.9017435908, alpha: 1)
+            screenVCModel = ScreenVCModel(screenLabelText: "Screen 3",
+                                          firstButtonTitle: "Screen 1",
+                                          secondButtonTitle: "Screen 2",
+                                          thirdButtonTitle: "Screen 4",
+                                          colorOfBackground: #colorLiteral(red: 0.7818048596, green: 1, blue: 0.9017435908, alpha: 1))
         case .fourth:
-            screenVCModel.screenLabelText = "Screen 4"
-            screenVCModel.firstButtonTitle = "Screen 1"
-            screenVCModel.secondButtonTitle = "Screen 2"
-            screenVCModel.thirdButtonTitle = "Screen 3"
-            screenVCModel.colorOfBackground = #colorLiteral(red: 0.9935612082, green: 1, blue: 0.8006600738, alpha: 1)
+            screenVCModel = ScreenVCModel(screenLabelText: "Screen 4",
+                                          firstButtonTitle: "Screen 1",
+                                          secondButtonTitle: "Screen 2",
+                                          thirdButtonTitle: "Screen 3",
+                                          colorOfBackground: #colorLiteral(red: 0.9935612082, green: 1, blue: 0.8006600738, alpha: 1))
         default:
-            screenVCModel.screenLabelText = "Screen 1"
-            screenVCModel.firstButtonTitle = "Screen 2"
-            screenVCModel.secondButtonTitle = "Screen 3"
-            screenVCModel.thirdButtonTitle = "Screen 4"
-            screenVCModel.colorOfBackground = #colorLiteral(red: 0.8233212829, green: 0.8068348765, blue: 1, alpha: 1)
+            screenVCModel = ScreenVCModel(screenLabelText: "Screen 1",
+                                          firstButtonTitle: "Screen 2",
+                                          secondButtonTitle: "Screen 3",
+                                          thirdButtonTitle: "Screen 4",
+                                          colorOfBackground: #colorLiteral(red: 0.8233212829, green: 0.8068348765, blue: 1, alpha: 1))
         }
         return screenVCModel
     }
