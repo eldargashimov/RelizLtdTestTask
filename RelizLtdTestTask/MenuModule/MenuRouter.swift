@@ -31,16 +31,15 @@ final class MenuRouter: MenuRouterProtocol {
     
     func presentScreenViewController() {
         
-        let screenVC = screenAssembly.configureFullScreenViewController()
+        let screenVC = screenAssembly.configureFullScreenViewController(menuViewController: menuViewController!)
         screenVC.modalPresentationStyle = .overFullScreen
         menuViewController?.present(screenVC,animated: true)
     }
     
     func presentPopupViewController() {
         
-        let screenVC = screenAssembly.configurePopupScreenViewController()
+        let screenVC = screenAssembly.configurePopupScreenViewController(menuViewController: menuViewController!)
         screenVC.modalPresentationStyle = .overFullScreen
-        screenVC.modalTransitionStyle = .coverVertical
         menuViewController?.present(screenVC, animated: true)
     }
 }

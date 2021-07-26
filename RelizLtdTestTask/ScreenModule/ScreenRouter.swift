@@ -12,7 +12,7 @@ import UIKit
 protocol ScreenRouterProtocol {
     
     func presentFullScreenViewController()
-    func presentPopupViewController() 
+    func presentPopupViewController()
     func backToMenuViewController(viewController: UIViewController)
 }
 
@@ -22,12 +22,15 @@ final class ScreenRouter: ScreenRouterProtocol {
     
     var screenType: ScreenType
     weak var screenViewController: ScreenViewController?
+    unowned var menuViewController: MenuViewController
     lazy var screenAssembly = ScreenAssembly(screenType: screenType)
     var itIsPopup: Bool
     
     // MARK: - Initializers
     
-    init(screenViewController: ScreenViewController?, screenType: ScreenType, itIsPop: Bool) {
+    init(menuViewController: MenuViewController, screenViewController: ScreenViewController?, screenType: ScreenType, itIsPop: Bool) {
+        
+        self.menuViewController = menuViewController
         self.screenViewController = screenViewController
         self.screenType = screenType
         self.itIsPopup = itIsPop
@@ -37,16 +40,16 @@ final class ScreenRouter: ScreenRouterProtocol {
     
     func presentFullScreenViewController() {
         
-        let view = screenAssembly.configureFullScreenViewController()
+        let view = screenAssembly.configureFullScreenViewController(menuViewController: menuViewController)
         view.modalPresentationStyle = .fullScreen
-        screenViewController?.present(view,animated: true)
+        menuViewController.present(view, animated: true)
     }
     
     func presentPopupViewController() {
         
-        let view = screenAssembly.configurePopupScreenViewController()
-        view.modalPresentationStyle = .fullScreen
-        screenViewController?.present(view,animated: true)
+        let view = screenAssembly.configurePopupScreenViewController(menuViewController: menuViewController)
+        view.modalPresentationStyle = .overCurrentContext
+        menuViewController.present(view, animated: true)
     }
     
     func backToMenuViewController(viewController: UIViewController) {

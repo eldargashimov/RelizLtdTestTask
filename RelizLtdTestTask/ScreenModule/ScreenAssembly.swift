@@ -9,8 +9,8 @@ import Foundation
 
 protocol ScreenAssemblyProtocol {
     
-    func configureFullScreenViewController() -> ScreenViewController
-    func configurePopupScreenViewController() -> ScreenViewController
+    func configureFullScreenViewController(menuViewController: MenuViewController) -> ScreenViewController
+    func configurePopupScreenViewController(menuViewController: MenuViewController) -> ScreenViewController
 }
 
 final class ScreenAssembly: ScreenAssemblyProtocol {
@@ -22,17 +22,18 @@ final class ScreenAssembly: ScreenAssemblyProtocol {
     // MARK: Initializers
     
     init(screenType: ScreenType) {
+        
         self.screenType = screenType
     }
     
     // MARK: - Public
     
-    func configureFullScreenViewController() -> ScreenViewController {
+    func configureFullScreenViewController(menuViewController: MenuViewController) -> ScreenViewController {
         
         let interactor = ScreenInteractor(screenType: screenType)
         let presenter = ScreenPresenter(interactor: interactor)
         let view = ScreenViewController(screenType: screenType, nibName: nil, bundle: nil, leftAndRightIdent: 0.0, topAndBottonIdent: 0.0)
-        let router = ScreenRouter(screenViewController: view, screenType: screenType, itIsPop: view.itIsPopup)
+        let router = ScreenRouter(menuViewController: menuViewController ,screenViewController: view, screenType: screenType, itIsPop: view.itIsPopup)
         
         view.presenter = presenter
         presenter.view = view
@@ -42,12 +43,12 @@ final class ScreenAssembly: ScreenAssemblyProtocol {
         return view
     }
     
-    func configurePopupScreenViewController() -> ScreenViewController {
+    func configurePopupScreenViewController(menuViewController: MenuViewController) -> ScreenViewController {
         
         let interactor = ScreenInteractor(screenType: screenType)
         let presenter = ScreenPresenter(interactor: interactor)
         let view = ScreenViewController(screenType: screenType, nibName: nil, bundle: nil, leftAndRightIdent: 50.0, topAndBottonIdent: 75.0)
-        let router = ScreenRouter(screenViewController: view, screenType: screenType, itIsPop: view.itIsPopup)
+        let router = ScreenRouter(menuViewController: menuViewController, screenViewController: view, screenType: screenType, itIsPop: view.itIsPopup)
         
         view.presenter = presenter
         presenter.view = view

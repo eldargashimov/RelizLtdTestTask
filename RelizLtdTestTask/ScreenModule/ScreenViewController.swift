@@ -7,11 +7,10 @@
 
 import UIKit
 
-class ScreenViewController: UIViewController {
+final class ScreenViewController: UIViewController {
     
     // MARK: - Properties
     
-//    var router: ScreenRouter?
     var presenter: ScreenPresenterInput?
     
     var leftAndRightIdent: CGFloat
@@ -173,7 +172,9 @@ class ScreenViewController: UIViewController {
     
     private func presentVC(secondScreenType: ScreenType) {
         
-        presenter?.presentSecondVC(screenType: secondScreenType)
+        dismiss(animated: false, completion: {
+            self.presenter?.presentSecondVC(screenType: secondScreenType)
+        })
     }
     
     // MARK: - @objc
